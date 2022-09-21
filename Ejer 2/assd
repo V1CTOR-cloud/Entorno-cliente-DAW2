@@ -1,0 +1,7 @@
+for (let jindex = 0; jindex < arrayTD.length; jindex++) {
+
+            if (jindex % 2 === 1) {
+                const jelement = arrayTD[jindex];
+                console.log(jelement);
+            }
+        }

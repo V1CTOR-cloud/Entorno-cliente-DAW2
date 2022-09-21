@@ -1,0 +1,26 @@
+let table = document.querySelector('#four').childNodes[1].childNodes[1].childNodes[1].childNodes[3].getElementsByTagName('table')[0]
+
+let tbody = document.querySelector('#four').childNodes[1].childNodes[1].childNodes[1].childNodes[3].getElementsByTagName('table')[0].childNodes[1]
+
+let array = tbody.childNodes;
+
+//console.log(array);
+
+for (let index = 0; index < array.length; index++) {
+
+
+    if (index % 2 === 1) {
+        const element = array[index];
+        let arrayTD = element.childNodes;
+
+        for (let jindex = 0; jindex < arrayTD.length; jindex++) {
+
+            if (jindex % 2 === 1) {
+                const jelement = arrayTD[jindex];
+                console.log(jelement);
+            }
+        }
+
+    }
+
+}
