@@ -14,22 +14,19 @@ let TREdad = newarr[2];
 let TROcupacion = newarr[3];
 let TRHobbies = newarr[4];
 
-newarr = [];
-
 //console.log(TRNombres);
-cambiaDatos(TRDomicilios, "Calle Barbaro", 3);
+cambiaDatos(TRDomicilios, "Calle Barbaro", 1);
 cambiaDatos(TREdad, 400, 3);
-cambiaDatos(TRHobbies, 'fumar crack', 5);
-cambiaDatos(TROcupacion, 'Desecho Social', 9);
-
-cambiaNombre(TRNombres, "Fumadores");
+cambiaDatos(TROcupacion, 'Desecho Social', 4);
+cambiaDatos(TRHobbies, 'fumar crack', 2);
+//cambiaNombre(TRNombres, "Fumadores");
 
 function cambiaDatos(TR, dato, pos) {
     for (let index = 0; index < TR.childNodes.length; index++) {
         const element = TR.childNodes[index];
 
         if (element.nodeType === 1) {
-            TR.childNodes[pos].textContent = dato;
+            TR.cells[pos].textContent = dato;
         }
     }
 }
