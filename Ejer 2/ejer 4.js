@@ -8,7 +8,7 @@ let arrceldas2 = [];
 let arrceldas3 = [];
 let arrceldas4 = [];
 let arrceldas5 = [];
-//console.log(array);
+console.log(array);
 
 for (let index = 0; index < array.length; index++) {
 
