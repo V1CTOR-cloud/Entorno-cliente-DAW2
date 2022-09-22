@@ -1,1 +1,11 @@
-tengo 5 arrays hay que recorrerlos por separado
+1 array tabla == espacios y tr
+
+elemina espacios filtro
+
+array === 5 element === tr
+
+FILTRO ELIM espacios <--
+
+TR === arrayNOMBRES = [Pedro	David	María	Carmen]
+
+TR === arrayDOMILICIOS = [Calle Mayor	Calle Colón	Plaza España	Avenida Europa]

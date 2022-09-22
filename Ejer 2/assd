@@ -1,7 +1,18 @@
-for (let jindex = 0; jindex < arrayTD.length; jindex++) {
+for (let jindex = 0; jindex < array.length; jindex++) {
+    const element = array[jindex];
 
-            if (jindex % 2 === 1) {
-                const jelement = arrayTD[jindex];
-                console.log(jelement);
-            }
+
+    if (jindex % 2 === 1) {
+        console.log(element);
+    }
+    /* for (let jindex = 0; jindex < element.childNodes.length; jindex++) {
+        const td = element[jindex];
+        if (td. !== 0) {
+            arrNombres = array[jindex];
+            arrDomicilios = array[jindex];
+            arrEdad = array[jindex];
+            arrOcupacion = array[jindex];
+            arrHobbies = array[jindex];
         }
+    } */
+}

@@ -2,25 +2,56 @@ let table = document.querySelector('#four').childNodes[1].childNodes[1].childNod
 
 let tbody = document.querySelector('#four').childNodes[1].childNodes[1].childNodes[1].childNodes[3].getElementsByTagName('table')[0].childNodes[1]
 
-let array = tbody.childNodes;
-let arrceldas1 = [];
-let arrceldas2 = [];
-let arrceldas3 = [];
-let arrceldas4 = [];
-let arrceldas5 = [];
-console.log(array);
+let array = Array.from(tbody.childNodes);
+let newarr = [];
+newarr = limpiaArray(array);
 
-for (let index = 0; index < array.length; index++) {
+//console.log(newarr);
 
-    if (index % 2 === 1) {
-        arrceldas1 = array[1].childNodes;
-        arrceldas2 = array[2].childNodes;
-        arrceldas3 = array[3].childNodes;
-        arrceldas4 = array[4].childNodes;
-        arrceldas5 = array[5].childNodes;
+let TRNombres = newarr[0];
+let TRDomicilios = newarr[1];
+let TREdad = newarr[2];
+let TROcupacion = newarr[3];
+let TRHobbies = newarr[4];
+
+newarr = [];
+
+//console.log(TRNombres);
+cambiaDatos(TRDomicilios, "Calle Barbaro", 3);
+cambiaDatos(TREdad, 400, 3);
+cambiaDatos(TRHobbies, 'fumar crack', 5);
+cambiaDatos(TROcupacion, 'Desecho Social', 9);
+
+cambiaNombre(TRNombres, "Fumadores");
+
+function cambiaDatos(TR, dato, pos) {
+    for (let index = 0; index < TR.childNodes.length; index++) {
+        const element = TR.childNodes[index];
+
+        if (element.nodeType === 1) {
+            TR.childNodes[pos].textContent = dato;
+        }
     }
 }
 
-for (let index = 0; index < array.length; index++) {
-    const element = array[index];
+function cambiaNombre(TR, dato) {
+    for (let index = 0; index < TR.childNodes.length; index++) {
+        const element = TR.childNodes[index];
+
+        if (element.nodeType === 1) {
+            element.textContent = dato;
+        }
+
+    }
+}
+
+function limpiaArray(array) {
+    let newarr = [];
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        if (element.nodeType === 1) {
+            newarr.push(element);
+        }
+    }
+    return newarr;
 }
