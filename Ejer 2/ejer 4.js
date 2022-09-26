@@ -19,7 +19,7 @@ cambiaDatos(TRDomicilios, "Calle Barbaro", 1);
 cambiaDatos(TREdad, 400, 3);
 cambiaDatos(TROcupacion, 'Desecho Social', 4);
 cambiaDatos(TRHobbies, 'fumar crack', 2);
-//cambiaNombre(TRNombres, "Fumadores");
+cambiaNombre(TRNombres, "Fumadores");
 
 function cambiaDatos(TR, dato, pos) {
     for (let index = 0; index < TR.childNodes.length; index++) {
