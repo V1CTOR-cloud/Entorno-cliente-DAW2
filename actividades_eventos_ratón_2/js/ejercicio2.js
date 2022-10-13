@@ -1,19 +1,25 @@
-const table1 = document.getElementById('tablebot');
+const tbody = document.getElementById('tablebot').childNodes[1];
+for (let index = 0; index < tbody.childNodes.length; index++) {
+    const element = tbody.childNodes[index];
 
-hoverIMG(table1);
+    if (element.nodeType === 1) {
+        for (let jindex = 0; jindex < element.childNodes.length; jindex++) {
+            const img = element.childNodes[jindex];
+            if (img.nodeType === 1) {
+                let imagenLimpia = img.childNodes[0]
 
-function hoverIMG(object) {
-    let img;
+                imagenLimpia.addEventListener("mouseenter", () => {
+                    imagenLimpia.style.opacity = 0.5;
+                })
 
-    for (let index = 1; index < object.childNodes.length; index++) {
-        img = object.rows.cells[index];
+                imagenLimpia.addEventListener("mouseleave", () => {
+                    imagenLimpia.style.opacity = 1;
+                })
 
-        img.addEventListener('mouseenter', () => {
-            img.style.opacity = 0.5;
-        })
-
-        img.addEventListener('mouseleave', () => {
-            img.style.opacity = 1;
-        })
+                imagenLimpia.addEventListener("click", () => {
+                    console.log(imagenLimpia);
+                })
+            }
+        }
     }
 }

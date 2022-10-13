@@ -1,0 +1,164 @@
+body{
+    padding:0px;
+    margin: 0px;
+    background-color: white;
+    text-align: center;
+}
+
+.jumbotron{
+    background-image:url("https://1.bp.blogspot.com/-yxFqsf3kyOc/WhHroYl5y-I/AAAAAAAAgNI/trYhkyr_JqEl-s9id2XkUfJ4f6jXIqs8wCLcBGAs/s1600/ada%2Blovelace.jpg");
+    height: 300px;
+    background-position: bottom center;
+    filter: grayscale(100%);
+}
+
+h1{
+    color:white;
+    font-family: 'Ruda', sans-serif;
+    font-size: 70px;
+    font-weight: 900;
+    margin: 0px;
+    padding-top: 200px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2{
+    color: white;
+    font-family: 'Catamaran',sans-serif;
+    margin: 0px;
+    text-align: left;
+}
+
+h3{
+    color: #D7263D;
+    font-family: 'Ruda',sans-serif;
+    font-size: 25px;
+    margin: 0px;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+p{
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Pontano Sans',sans-serif;
+    margin: 0px;
+    text-align: left;
+}
+
+.one{
+    border: 1px solid red;
+    margin: 60px auto;
+    padding: 10px 0px 0px 0px;
+    width: 90%;
+    background-color: darkgray;
+}
+
+.two{
+    border: 1px solid white;
+    margin: 60px auto;
+    padding: 10px 0px 0px 0px;
+    width: 90%;
+    background-color: orange;
+}
+
+.three{
+    border: 1px solid white;
+    margin: 60px auto;
+    padding: 10px 0px 0px 0px;
+    width: 90%;
+    background-color: darkred;
+}
+
+.four{
+    border: 1px solid white;
+    margin: 60px auto;
+    padding: 10px 0px 0px 0px;
+    width: 40%;
+    background-color: darkgrey;
+}
+
+
+.lovelace{
+    border: 1px solid red;
+    margin: 90px auto;
+    padding: 10px 0px 0px 0px;
+    width: 90%;
+    background-color: black;
+}
+
+.category{
+    color:white;
+    font-family: 'Ruda', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    margin: 0px;
+    padding-top: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.img{
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.description{
+    display: inline-block;
+    width: 70%;
+}
+
+.book{
+    margin-top: 30px;
+    width: 100%;
+}
+
+a{
+    background-color: #D7263D;
+    color: black;
+    display: inline;
+    font-family: 'Pontano Sans',sans-serif;
+    font-size: 16px;
+    padding: 14px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+ul{
+    padding: 0px;
+    margin: 10px 0px;
+}
+
+li{
+    margin:0px;
+    list-style: none;
+}
+
+.breadcrumb a {
+    background-color: inherit;
+}
+
+#tablebot{
+    position: absolute;
+    margin: auto;
+    width: 40%;
+    height: auto;
+    margin-left:30%; 
+    margin-right:30%;
+    }
+
+.container {
+    margin: 0px auto;
+  }
+
+input[type=text] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: white;
+    color: black;
+}
