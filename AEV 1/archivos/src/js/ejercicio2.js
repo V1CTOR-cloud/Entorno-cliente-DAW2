@@ -1,8 +1,11 @@
+//#region titulo rojo 
 const titulo = document.getElementsByTagName('h1')[1];
 titulo.style.color = 'red';
 const table = document.getElementsByTagName('tbody')[0];
 
-document.getElementsByTagName('h1')[0].addEventListener('click', () => {
+//#endregion titulo rojo
+
+document.getElementsByTagName('h1')[0].addEventListener('click', () => { // re-renderiza la pag para volver al estado inicial
     location.reload();
 });
 
@@ -24,6 +27,11 @@ title2.style.color = 'red';
 
 /* FIN ESTILOS Y TEXTO  */
 
+/* 
+    Recorre tbody, elimina espacios en blanco, añadimos img inicio,
+    damos estilos a las celdas, recorremos y ejecutamos re renderización de tabla
+*/
+
 for (let index = 0; index < table.childNodes.length; index++) {
     if (table.childNodes[index].nodeType === 1) { // TR LEVEL
         const element = table.childNodes[index];
@@ -39,25 +47,63 @@ for (let index = 0; index < table.childNodes.length; index++) {
 
 
         for (let jindex = 0; jindex < element.childNodes.length; jindex++) { // ESTILOS EN LAS CELDAS
-            if (element.childNodes[jindex].nodeType === 1) {
-                const jelement = element.childNodes[jindex];
+            if (element.childNodes[jindex].nodeType === 1) { // Elimina espacios en blanco
+                const jelement = element.childNodes[jindex]; // Celdas iniciales
                 jelement.style.backgroundPosition = 'center';
-                jelement.style.backgroundRepeat = 'no-repeat';
+                jelement.style.backgroundRepeat = 'no-repeat'; // ESTILOS
                 jelement.style.backgroundSize = 'cover';
 
-                jelement.addEventListener('click', (e) => {
+                jelement.addEventListener('click', (e) => { // CLICK EVENT
                     e.preventDefault();
 
-                    jelement.childNodes.forEach(element => {
-                        if (element.nodeType === 1) {
-                            switch (element.textContent.toUpperCase()) {
+                    jelement.childNodes.forEach(element => { // RECORREMOS la tabla y mockeamos los datos con fakeData
+                        if (element.nodeType === 1) { // Elimina espacios en blanco
+                            const tr = document.createElement('tr'); // FILA
+                            switch (element.textContent.toUpperCase()) { // selecciona por categorias
                                 case 'ADA':
+                                    table.deleteRow(0); // Borramos la fila
+
+                                    table.appendChild(tr); // creamos  la fila
+
+                                    fakeData[0].images.forEach(element => { // creamos celdas con las imagenes ADA
+                                        const td = document.createElement('td');
+                                        tr.appendChild(td);
+                                        td.style.backgroundPosition = 'center';
+                                        td.style.backgroundRepeat = 'no-repeat';
+                                        td.style.backgroundSize = 'cover';
+
+                                        td.style.height = '12rem';
+                                        td.style.width = '18rem';
+
+                                        td.style.backgroundImage = 'url(' + element + ')'; // ASIGNAMOS el URI de la img
+
+                                        td.addEventListener('click', () => { // click de celdas
+
+                                            for (let jindex = 0; jindex < tr.childNodes.length; jindex++) { // renderización tabla
+                                                const cell = tr.childNodes[jindex];
+
+                                                tr.replaceChildren(document.createElement('td'));
+                                                tr.appendChild(cell);
+                                                cell.style.backgroundImage = 'url(' + element + ')'; // Render img con id
+
+                                                cell.addEventListener('click', () => { // MOSTRAR GRANDE
+                                                    tr.replaceChildren(td);
+                                                    td.style.height = '80rem'; // Set height to 80
+                                                });
+
+                                            }
+
+                                        });
+
+                                    });
+                                    break;
+
+                                case 'FAMILIA': // MISMO PROCESO QUE ADA
                                     table.deleteRow(0);
-                                    //console.log(table);
-                                    const tr = document.createElement('tr');
+
                                     table.appendChild(tr);
 
-                                    fakeData[2].images.forEach(element => {
+                                    fakeData[1].images.forEach(element => { // FAMILIA
                                         const td = document.createElement('td');
                                         tr.appendChild(td);
                                         td.style.backgroundPosition = 'center';
@@ -90,15 +136,14 @@ for (let index = 0; index < table.childNodes.length; index++) {
                                     });
                                     break;
 
-                                case 'FAMILIA':
+                                case 'LEGADO': // MISMO PROCESO ADA, FAMILIA
                                     table.deleteRow(0);
-                                    //console.log(table);
-                                    const tr1 = document.createElement('tr');
-                                    table.appendChild(tr1);
 
-                                    fakeData[2].images.forEach(element => {
+                                    table.appendChild(tr);
+
+                                    fakeData[2].images.forEach(element => { // LEGADO
                                         const td = document.createElement('td');
-                                        tr1.appendChild(td);
+                                        tr.appendChild(td);
                                         td.style.backgroundPosition = 'center';
                                         td.style.backgroundRepeat = 'no-repeat';
                                         td.style.backgroundSize = 'cover';
@@ -110,54 +155,15 @@ for (let index = 0; index < table.childNodes.length; index++) {
 
                                         td.addEventListener('click', () => {
 
-                                            for (let jindex = 0; jindex < tr1.childNodes.length; jindex++) {
-                                                const cell = tr1.childNodes[jindex];
+                                            for (let jindex = 0; jindex < tr.childNodes.length; jindex++) {
+                                                const cell = tr.childNodes[jindex];
 
-                                                tr1.replaceChildren(document.createElement('td'));
-                                                tr1.appendChild(cell);
+                                                tr.replaceChildren(document.createElement('td'));
+                                                tr.appendChild(cell);
                                                 cell.style.backgroundImage = 'url(' + element + ')';
 
                                                 cell.addEventListener('click', () => {
-                                                    tr1.replaceChildren(td);
-                                                    td.style.height = '80rem';
-                                                });
-
-                                            }
-
-                                        });
-
-                                    });
-                                    break;
-
-                                case 'LEGADO':
-                                    table.deleteRow(0);
-                                    //console.log(table);
-                                    const tr2 = document.createElement('tr');
-                                    table.appendChild(tr2);
-
-                                    fakeData[2].images.forEach(element => {
-                                        const td = document.createElement('td');
-                                        tr2.appendChild(td);
-                                        td.style.backgroundPosition = 'center';
-                                        td.style.backgroundRepeat = 'no-repeat';
-                                        td.style.backgroundSize = 'cover';
-
-                                        td.style.height = '12rem';
-                                        td.style.width = '18rem';
-
-                                        td.style.backgroundImage = 'url(' + element + ')';
-
-                                        td.addEventListener('click', () => {
-
-                                            for (let jindex = 0; jindex < tr2.childNodes.length; jindex++) {
-                                                const cell = tr2.childNodes[jindex];
-
-                                                tr2.replaceChildren(document.createElement('td'));
-                                                tr2.appendChild(cell);
-                                                cell.style.backgroundImage = 'url(' + element + ')';
-
-                                                cell.addEventListener('click', () => {
-                                                    tr2.replaceChildren(td);
+                                                    tr.replaceChildren(td);
                                                     td.style.height = '80rem';
                                                 });
 
@@ -170,7 +176,7 @@ for (let index = 0; index < table.childNodes.length; index++) {
                                     break;
 
                                 default:
-                                    alert('Invalid block on cells');
+                                    alert('Invalid block on cells'); // EXCEPTION CATEGORIA
                                     break;
                             }
                         }
@@ -183,7 +189,7 @@ for (let index = 0; index < table.childNodes.length; index++) {
     }
 }
 
-const fakeData = [{
+const fakeData = [{ // ARRAY IMG && DATOS MOCKEADOS 
         images: [
             '../src/ada/1.jpg',
             '../src/ada/2.jpg',

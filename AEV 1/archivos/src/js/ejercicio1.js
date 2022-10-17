@@ -1,13 +1,13 @@
-let container = document.getElementsByClassName('lovelace');
+let container = document.getElementsByClassName('lovelace'); // NODELIST lovelace
 
-for (let index = 1; index < container.length; index++) {
+for (let index = 1; index < container.length; index++) { // OCULTAMOS TODOS EXCEPTO 1
     const element = container[index];
     element.style.display = 'none';
 }
 
 
-for (let index = 0; index < container.length; index++) {
-    if (container[index].nodeType === 1) {
+for (let index = 0; index < container.length; index++) { // RECORREMOS NODELIST
+    if (container[index].nodeType === 1) { // ELIMINA ESPACIOS BLANCOS
         let lovelace = container[index];
 
         const numberSection = lovelace.firstChild.nextSibling.nextSibling.nextSibling;
@@ -17,6 +17,7 @@ for (let index = 0; index < container.length; index++) {
 
         numberSection.lastChild.previousSibling.childNodes.forEach(element => { //BOOK INSIDE
             if (element.nodeType === 1) {
+                let cont = 0;
                 if (element.textContent.toUpperCase() === 'ANTERIOR') { // ANTERIOR BTN
                     const btnBackIns = element;
 
@@ -26,9 +27,12 @@ for (let index = 0; index < container.length; index++) {
                         /* 
                             CAMBIAR POS
                         */
-
-
-
+                        cont++;
+                        while (cont !== 3) { // permite decrementar 3 veces
+                            index--;
+                            lovelace = container[index];
+                            lovelace.style.display = 'block';
+                        }
                     });
                 } else { // NEXT BTN
                     const btnNextIns = element;
@@ -38,6 +42,12 @@ for (let index = 0; index < container.length; index++) {
                         /* 
                             CAMBIAR POS
                         */
+                        cont++;
+                        while (cont !== 3) { // permite incrementar 3 veces
+                            index--;
+                            lovelace = container[index];
+                            lovelace.style.display = 'block';
+                        }
                     });
 
                 }
@@ -48,32 +58,28 @@ for (let index = 0; index < container.length; index++) {
 
         lovelace.lastChild.previousSibling.childNodes.forEach(element => { //BOOK OUTSIDE
             if (element.nodeType === 1) {
-                if (element.textContent.toUpperCase() === 'ANTERIOR') {
+                if (element.textContent.toUpperCase() === 'ANTERIOR') { // ANTERIOR BTN OUTSIDE
                     const btnBackOut = element;
 
-                    btnBackOut.addEventListener("click", (e) => {
+                    btnBackOut.addEventListener("click", (e) => { // recursividad inversa
                         e.preventDefault();
-                        /* lovelace.style.display = 'none'; */
                         const category = lovelace.firstChild.nextSibling;
-                        //console.log(category.textContent);
-                        //console.log(index);
                         switch (category.textContent.toUpperCase()) {
-                            case 'BIOGRAFIA':
-                                lovelace.style.display = 'none';
+                            case 'BIOGRAFIA': // ÚLTIMA ACCIÓN <- recibe recursividad inversa
+                                lovelace.style.display = 'none'
                                 index = 0;
                                 lovelace = container[index];
                                 lovelace.style.display = 'block';
-
                                 break;
 
-                            case 'CONTRIBUCIÓN A LA INFORMÁTICA':
+                            case 'CONTRIBUCIÓN A LA INFORMÁTICA': // <-GOES TO BIOGRAFIA
                                 lovelace.style.display = 'none';
                                 index = index - 3;
                                 lovelace = container[index];
                                 lovelace.style.display = 'block';
                                 break;
 
-                            case 'MÁS ALLÁ DE LOS NÚMEROS':
+                            case 'MÁS ALLÁ DE LOS NÚMEROS': // <-GOES TO CONTRIBUCIÓN
                                 lovelace.style.display = 'none';
                                 index = index - 3;
                                 lovelace = container[index];
@@ -81,36 +87,36 @@ for (let index = 0; index < container.length; index++) {
                                 break;
 
                             default:
-
+                                alert('Error: Unknown category'); // ERROR CATEGORIA
                                 break;
                         }
                     });
-                } else {
+                } else { // SIGUIENTE BTN OUTSIDE
                     const btnNextOut = element;
-                    btnNextOut.addEventListener('click', (e) => {
+                    btnNextOut.addEventListener('click', (e) => { // recursividad ordinaria
                         e.preventDefault();
-                        const category = lovelace.firstChild.nextSibling;
+                        const category = lovelace.firstChild.nextSibling; // CATEGORIA
                         switch (category.textContent.toUpperCase()) {
-                            case 'BIOGRAFIA':
+                            case 'BIOGRAFIA': // GOES TO CONTRIBUCIÓN ->
                                 lovelace.style.display = 'none';
                                 index = index + 3;
                                 lovelace = container[index];
                                 lovelace.style.display = 'block';
                                 break;
 
-                            case 'CONTRIBUCIÓN A LA INFORMÁTICA':
+                            case 'CONTRIBUCIÓN A LA INFORMÁTICA': // GOES TO MÁS ALLÁ ->
                                 lovelace.style.display = 'none';
                                 index = index + 3;
                                 lovelace = container[index];
                                 lovelace.style.display = 'block';
                                 break;
 
-                            case 'MÁS ALLÁ DE LOS NÚMEROS':
+                            case 'MÁS ALLÁ DE LOS NÚMEROS': // -> FIN DE RECURSIVIDAD
 
                                 break;
 
                             default:
-
+                                alert('Error: Unknown category'); // ERROR CATEGORIA
                                 break;
                         }
                     });
