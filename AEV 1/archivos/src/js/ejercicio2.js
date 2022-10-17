@@ -2,6 +2,10 @@ const titulo = document.getElementsByTagName('h1')[1];
 titulo.style.color = 'red';
 const table = document.getElementsByTagName('tbody')[0];
 
+document.getElementsByTagName('h1')[0].addEventListener('click', () => {
+    location.reload();
+});
+
 
 /* CREACIÓN TITULOS */
 const title1 = document.createElement('h1');
@@ -48,20 +52,121 @@ for (let index = 0; index < table.childNodes.length; index++) {
                         if (element.nodeType === 1) {
                             switch (element.textContent.toUpperCase()) {
                                 case 'ADA':
-                                    table.remove();
-                                    table.appendChild(document.createElement('tr'));
-                                    fakeData[0].images.forEach(element => {
+                                    table.deleteRow(0);
+                                    //console.log(table);
+                                    const tr = document.createElement('tr');
+                                    table.appendChild(tr);
+
+                                    fakeData[2].images.forEach(element => {
+                                        const td = document.createElement('td');
+                                        tr.appendChild(td);
+                                        td.style.backgroundPosition = 'center';
+                                        td.style.backgroundRepeat = 'no-repeat';
+                                        td.style.backgroundSize = 'cover';
+
+                                        td.style.height = '12rem';
+                                        td.style.width = '18rem';
+
+                                        td.style.backgroundImage = 'url(' + element + ')';
+
+                                        td.addEventListener('click', () => {
+
+                                            for (let jindex = 0; jindex < tr.childNodes.length; jindex++) {
+                                                const cell = tr.childNodes[jindex];
+
+                                                tr.replaceChildren(document.createElement('td'));
+                                                tr.appendChild(cell);
+                                                cell.style.backgroundImage = 'url(' + element + ')';
+
+                                                cell.addEventListener('click', () => {
+                                                    tr.replaceChildren(td);
+                                                    td.style.height = '80rem';
+                                                });
+
+                                            }
+
+                                        });
 
                                     });
-
                                     break;
 
                                 case 'FAMILIA':
-                                    table.remove();
+                                    table.deleteRow(0);
+                                    //console.log(table);
+                                    const tr1 = document.createElement('tr');
+                                    table.appendChild(tr1);
+
+                                    fakeData[2].images.forEach(element => {
+                                        const td = document.createElement('td');
+                                        tr1.appendChild(td);
+                                        td.style.backgroundPosition = 'center';
+                                        td.style.backgroundRepeat = 'no-repeat';
+                                        td.style.backgroundSize = 'cover';
+
+                                        td.style.height = '12rem';
+                                        td.style.width = '18rem';
+
+                                        td.style.backgroundImage = 'url(' + element + ')';
+
+                                        td.addEventListener('click', () => {
+
+                                            for (let jindex = 0; jindex < tr1.childNodes.length; jindex++) {
+                                                const cell = tr1.childNodes[jindex];
+
+                                                tr1.replaceChildren(document.createElement('td'));
+                                                tr1.appendChild(cell);
+                                                cell.style.backgroundImage = 'url(' + element + ')';
+
+                                                cell.addEventListener('click', () => {
+                                                    tr1.replaceChildren(td);
+                                                    td.style.height = '80rem';
+                                                });
+
+                                            }
+
+                                        });
+
+                                    });
                                     break;
 
                                 case 'LEGADO':
-                                    table.remove();
+                                    table.deleteRow(0);
+                                    //console.log(table);
+                                    const tr2 = document.createElement('tr');
+                                    table.appendChild(tr2);
+
+                                    fakeData[2].images.forEach(element => {
+                                        const td = document.createElement('td');
+                                        tr2.appendChild(td);
+                                        td.style.backgroundPosition = 'center';
+                                        td.style.backgroundRepeat = 'no-repeat';
+                                        td.style.backgroundSize = 'cover';
+
+                                        td.style.height = '12rem';
+                                        td.style.width = '18rem';
+
+                                        td.style.backgroundImage = 'url(' + element + ')';
+
+                                        td.addEventListener('click', () => {
+
+                                            for (let jindex = 0; jindex < tr2.childNodes.length; jindex++) {
+                                                const cell = tr2.childNodes[jindex];
+
+                                                tr2.replaceChildren(document.createElement('td'));
+                                                tr2.appendChild(cell);
+                                                cell.style.backgroundImage = 'url(' + element + ')';
+
+                                                cell.addEventListener('click', () => {
+                                                    tr2.replaceChildren(td);
+                                                    td.style.height = '80rem';
+                                                });
+
+                                            }
+
+                                        });
+
+                                    });
+
                                     break;
 
                                 default:
