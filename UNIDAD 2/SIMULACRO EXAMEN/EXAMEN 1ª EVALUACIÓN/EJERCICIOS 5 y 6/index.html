@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios 5 y 6</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Grandes monumentos</h1>
+    </header>
+    <main>
+        <form id="formulario_monumentos">
+            <label for="monumento">Monumento</label>
+            <input type="text" id="monumento" placeholder="Indica el nombre del monumento" required>
+
+            <label for="pais">Pais</label>
+            <input type="text" id="pais" placeholder="Pais" required>
+
+            <label for="foto">Foto</label>
+            <input type="url" id="foto" placeholder="Indica la URL de la foto">
+
+            <button type="submit">Añadir a la lista</button>
+        </form>
+        <article>
+            <h2 id="titulo">Monumentos</h2>
+            <div id="contenedor_monumentos">
+                <div class="card">
+                    <img id="imagen" src="https://dbdzm869oupei.cloudfront.net/img/quadres/preview/40446.png" alt="titulo monumento">
+                    <h2 id="nombre_monumento"></h2>
+                    <h3 id="nombre_pais"></h3>
+                </div>
+            </div>
+        </article>
+    </main>
+    <script src="ejercicio5_6.js"></script>
+</body>
+
+</html>

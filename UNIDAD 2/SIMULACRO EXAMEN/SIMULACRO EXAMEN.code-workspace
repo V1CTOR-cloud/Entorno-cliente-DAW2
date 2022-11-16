@@ -1,0 +1,13 @@
+{
+    "folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../EXAMEN 1ª EVALUACIÓN"
+		}
+	],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "EXAMEN 1ª EVALUACIÓN"
+    }
+}
