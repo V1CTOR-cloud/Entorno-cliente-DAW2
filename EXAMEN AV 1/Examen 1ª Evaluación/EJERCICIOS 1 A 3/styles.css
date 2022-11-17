@@ -1,0 +1,56 @@
+body {
+    background-color: #efefef;
+    font-family: Arial;
+    color: #333;
+    line-height: 1.4em;
+}
+
+main {
+    width: 800px;
+    margin:auto;
+    background-color:#FFF;
+    padding:20px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+aside {
+    width: 250px;
+}
+
+.imagenes{
+    width: 800px;
+    margin:auto;
+    background-color:#FFF;
+    padding:20px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+article {
+    width:525px;
+    height: 600px;
+}
+
+h1 {
+    height: 400px;
+    background: url("https://www.radiosefarad.com/wp-content/uploads/2018/12/los-polgar.png") no-repeat;
+    line-height: 150px;
+    text-align: center;
+    color: red;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p { height: 120px; }
+
+.esconder-menu {
+    display: none;
+}
+
+.mostrar-menu {
+    display: block;
+}
+

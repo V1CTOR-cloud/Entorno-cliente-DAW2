@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Grandes monumentos</h1>
+    </header>
+    <main>
+        <article>
+            <form id="formulario_monumentos">
+                <label for="monumento">Monumento</label>
+                <input type="text" id="monumento" placeholder="Indica el nombre del monumento">
+
+                <label for="foto">Foto</label>
+                <input type="url" id="foto" placeholder="Indica la URL de la foto">
+
+                <button type="submit">Añadir a la lista</button>
+            </form>
+            <form id="ver_monumentos">
+                <button type="submit">Ver monumentos</button>
+            </form>
+        </article>
+
+        <article>
+            <h2 id="titulo">Monumentos</h2>
+            <div id="contenedor_monumentos">
+                <div class="card">
+                    <img id="imagen" src="https://dbdzm869oupei.cloudfront.net/img/quadres/preview/40446.png" alt="titulo monumento">
+                    <form id="formul">
+                        <input type="text" id="monumento" placeholder="Indica el nombre del monumento">
+                        <button type="submit">Ver monumento</button>
+                    </form>
+                </div>
+            </div>
+        </article>
+    </main>
+    <script src="5.js"></script>
+</body>
+
+</html>
