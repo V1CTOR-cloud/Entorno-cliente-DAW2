@@ -1,0 +1,18 @@
+article {
+    width:525px;
+    height: 550px;
+}
+
+img {
+    width:500px;
+    height: 300px;
+}
+
+h1 {
+    height: 40px;
+    line-height: 150px;
+    text-align: center;
+
+        background-color: #ff0000 !important;
+        color: #00FF00 !important;
+}

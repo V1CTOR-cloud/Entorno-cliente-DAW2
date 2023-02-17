@@ -1,0 +1,18 @@
+
+
+header {
+    width: 1000px;
+    height: 100px;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    margin: auto;
+    background-color: rgb(130, 151, 172);
+    padding: 20px;
+    display: flex;
+    justify-content: end;
+    background-image: url('https://www.lovevalencia.com/wp-content/uploads/2011/09/cinee.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,26 @@
+<br>
+  <form (ngSubmit)="onSubmit()" method="post" action="#">
+
+    <div class="row gtr-uniform">
+        <div class="col-6 col-12-xsmall">
+            <select [(ngModel)]="start" name="start" id="start">
+                <option value="">- Hora Inicio -</option>
+                <option *ngFor="let item of hours" value={{item}}>{{item}}</option>
+            </select>
+        </div>
+        <div class="col-6 col-12-xsmall">
+            <select [(ngModel)]="end" name="finish" id="finish">
+                <option value="">- Hora Finalización -</option>
+                <option *ngFor="let item of hours" value={{item}}>{{item}}</option>
+            </select>
+        </div>
+        <div class="col-12">
+            <textarea [(ngModel)]="event" name="message" id="message" placeholder="Evento..." rows="6"></textarea>
+        </div>
+        <div class="col-12">
+            <ul class="actions">
+                <li><input type="submit" value="Enviar" class="primary" /></li>
+            </ul>
+        </div>
+    </div>
+</form>

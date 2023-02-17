@@ -1,0 +1,11 @@
+<div class="journal" [ngSwitch]="case">
+    <br>
+    <div *ngSwitchCase="true">
+        <full-calendar [options]="calendarOptions"></full-calendar>
+    </div>
+    <div *ngSwitchCase="false">
+        <full-calendar [options]="calendarOptions"></full-calendar>
+        <br>
+        <app-form (formContents)="onSubmit($event)"></app-form>
+    </div>
+</div>

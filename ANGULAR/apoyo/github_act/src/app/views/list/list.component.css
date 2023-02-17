@@ -1,0 +1,11 @@
+article {
+    width:525px;
+    height: 550px;
+}
+
+h1 {
+    height: 400px;
+    line-height: 150px;
+    text-align: center;
+    color: #fff;
+}

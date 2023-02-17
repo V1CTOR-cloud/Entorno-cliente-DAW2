@@ -1,0 +1,22 @@
+<div class="journal" [ngSwitch]="case">
+  <div *ngSwitchCase="'one'">
+    <app-photo (photos)="onPhoto($event)" [imgs]="contents[number].imgs" [class]="contents[number].class" [caption]="contents[number].caption"></app-photo>  
+  </div>
+  <div *ngSwitchCase="'two'">
+    <app-photo (photos)="onPhoto($event)" [imgs]="contents[number].imgs" [class]="contents[number].class" [caption]="contents[number].caption"></app-photo>
+    <div class="journal" [ngSwitch]="caseTwo">
+      <div *ngSwitchCase="'one'">
+        <app-content (counter)="handleQuotes($event)" [firstLetter]="contentsImageTwo[counter].firstLetter" [text]="contentsImageTwo[counter].text" [quote]="contentsImageTwo[counter].quote"></app-content>
+      </div>
+      <div *ngSwitchCase="'two'">
+        <div class="first photo">
+          <div class="image-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/y4pDyQzguJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <span class="caption" (click)="onBack()">Volver</span>
+      </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<aside>
+    <h2 (click)="onClick()">{{title}}</h2>
+    <nav class={{clase}}>
+        <ul>
+            <li><a [routerLink]="['espana']">{{links[0]}}</a></li>
+            <li><a [routerLink]="['francia']">{{links[1]}}</a></li>
+            <li><a [routerLink]="['portugal']">{{links[2]}}</a></li>
+            <li><a [routerLink]="['alemania']">{{links[3]}}</a></li>
+        </ul>
+    </nav>
+</aside>

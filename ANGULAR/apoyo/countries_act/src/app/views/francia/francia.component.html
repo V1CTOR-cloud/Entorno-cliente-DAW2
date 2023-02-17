@@ -1,0 +1,23 @@
+<article>
+    <h1>{{france?.name?.official}}</h1>
+    <tr>
+        <td><img src="{{ france?.flags?.png }}" alt="germany" width="250px"></td>
+        <th><img src="{{ france?.coatOfArms?.png }}" alt="germany" width="150px"></th>
+    </tr>
+    
+<table>
+    <tr>
+        <th>Mapa:</th>
+        <td><a href="{{ france?.maps?.googleMaps }}" target="_blank">Click</a></td>
+    </tr>
+    <tr>
+        <th>Longitud:</th>
+        <td>{{ weather?.coord?.lon }}</td>
+    </tr>
+    <tr>
+        <th>Latitud:</th>
+        <td>{{ weather?.coord?.lat }}</td>
+    </tr>
+</table>
+
+</article>

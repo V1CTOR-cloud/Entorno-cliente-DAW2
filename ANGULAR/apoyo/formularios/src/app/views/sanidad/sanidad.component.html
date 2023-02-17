@@ -1,0 +1,52 @@
+<div class="journal">
+    <div class="first photo" [ngSwitch]="photos">
+        <div class="image-container2" *ngSwitchCase="'one'">
+            <img *ngFor="let item of images" src={{item}} (click)="onClick()">
+        </div>
+        <div class="image-container" *ngSwitchCase="'two'">
+            <img src="https://pbs.twimg.com/media/FC2tDU9WYAEP95S.jpg">
+        </div>
+        <span class="caption">{{sentence}}</span>
+    </div>
+    <p *ngIf="paragraphs; else elseBlock">
+        <span class="quote">Trabajos en el campo de la sanidad.</span>
+    </p>
+
+    <ng-template #elseBlock>
+        <p>
+            <span class="first-letter">U</span>na de las principales áreas de acción de la Bill & Melinda Gates 
+            Foundation es el campo de la salud.
+            La Fundación es la segunda mayor provisora de fondos de la Organización Mundial de la Salud,
+            sólo por detrás de Alemania y contribuyendo más que el resto de paises del mundo, Estados Unidos incluido.
+            En la última partida de datos actualizada, el ejercicio de 2019, la fundación donó 530 millones de dólares,
+            repartidos
+            de la siguiente manera:
+        </p>
+        <p>Erradicación de la poliomielitis - 60,59 %</p>
+        <p>Salud reproductiva, materna, neonatal, infantil y de la adolescencia - 8,92 %</p>
+        <p>Enfermedades prevenibles mediante vacunación - 5,31 %</p>
+        <p>Acceso a medicamentos y tecnologías sanitarias y refuerzo de la capacidad reguladora - 5,27 %</p>
+        <p>Malaria - 3,36 %</p>
+        <p>Enfermedades tropicales desatendidas - 2,17 %</p>
+        <p>Nutrición - 2,06 %</p>
+        <p>VIH y hepatitis - 1,86 %</p>
+        <p>Políticas, estrategias y planes nacionales de salud - 1,12 %</p>
+        <p>Gestión y administración - 1,09 %</p>
+        <p>Enfermedades no transmisibles - 1,02 %</p>
+        <p><a href="https://open.who.int/2018-19/contributors/contributor?name=Bill%20%26%20Melinda%20Gates%20Foundation"
+                target="_blank">Fuente</a></p>
+        <span class="quote"><iframe width="560" height="315" src="https://www.youtube.com/embed/xKLczqn3COU"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe></span>
+        <p>Una de los frentes en los que más activamente ha estado involucrada la fundación desde sus inicios ha sido la
+            erradicación de la polio. A día de hoy, pese a los esfuerzos llevados a cabo durante años, la polio sigue
+            existiendo en países como Pakistan y Afganistán. Este mismo año saltarón todas las alarmas al darse nuevos
+            casos de polio en paises africanos como Mozambique y Malawi.
+            Como consecuencia, Bill anunció que donaría 1.200 millones de dolares a la Iniciativa Global para la
+            Erradicación de la Polio (Igep), a sumar a los más de 5.000 millones que ha donado a lo largo de los años.
+            <a href="https://www.plantadoce.com/empresa/bill-y-melinda-gates-invertiran-1200-millones-de-dolares-para-ayudar-a-erradicar-la-polio.html"
+                target="_blanket">Fuente</a>
+        </p>
+    </ng-template>
+</div>

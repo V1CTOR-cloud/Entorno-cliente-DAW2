@@ -1,0 +1,6 @@
+<div class="first photo">
+    <div class={{class}}>
+        <img *ngFor="let item of imgs let i = index" (click)="onPhoto(i)" src={{item}}>
+    </div>
+    <span class="caption">{{caption}}</span>
+</div>

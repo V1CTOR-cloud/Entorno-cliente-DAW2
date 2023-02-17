@@ -1,0 +1,23 @@
+<article>
+    <h1>{{germany?.name?.official}}</h1>
+    <img src="{{ germany?.flags?.png }}" alt="germnay">
+<table>
+    <tr>
+        <th>Capital:</th>
+        <td>{{ germany?.capital }}</td>
+    </tr>
+    <tr>
+        <th>Población:</th>
+        <td>{{ germany?.population }}</td>
+    </tr>
+    <tr>
+        <th>Moneda:</th>
+        <td>{{ germany?.currencies?.EUR?.name }} ({{ germany?.currencies?.EUR?.symbol }})</td>
+    </tr>
+    <tr>
+        <th>Temperatura:</th>
+        <td>{{ weather?.main?.temp }}</td>
+    </tr>
+</table>
+
+</article>

@@ -1,0 +1,9 @@
+footer{
+    width: 1000px;
+    font-size: 35px;
+    margin:auto;
+    background-color:black;
+    padding:20px;
+    display: flex;
+    flex-direction: row-reverse;
+}

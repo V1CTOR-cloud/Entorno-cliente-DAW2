@@ -1,0 +1,30 @@
+<div class="journal" [ngSwitch]="photos">
+    <div class="first photo" *ngSwitchCase="'one'">
+        <div *ngFor="let item of menu">
+            <div class="image-container3">
+                <img *ngFor="let element of item" (click)="onClick(element + 1)" src={{list[element].img}}>
+            </div>
+        </div>
+        <span class="caption">Proyectos</span>
+    </div>
+    <div *ngFor="let item of list">
+        <div class="first photo" *ngSwitchCase="item.case">
+            <div class="image-container">
+                <img (click)="onClick(0)" src={{item.img}}>
+            </div>
+            <span class="caption"><a [routerLink]="[item.route]">{{item.title}}</a></span>
+        </div>
+    </div>
+    <p>
+        <span class="first-letter">B</span>ill Gates mantiene desde hace más de 30 años una larga y sólida amistad con
+        el
+        inversor y magnate Warren Buffet, quién ha donado hasta la fecha la mitad de su fortuna a la Fundación.
+        En 2010, Gates y Buffett, junto con la entonces esposa de Gates, Melinda, iniciaron The Giving Pledge, una
+        iniciativa que perseguía que multimillonarios de todo el mundo se comprometieran a donar más de la mitad de su
+        riqueza.
+        Hasta la fecha se han donado unos 600.000 millones de dólares (604.777 millones de euros). <a
+            href="https://givingpledge.org/pledgerlist" target="_blank">Estos</a> son sus miembros.
+    </p>
+    <span class="quote">"As we look ahead into the next century, leaders will be those who empower others."</span>
+</div>
+

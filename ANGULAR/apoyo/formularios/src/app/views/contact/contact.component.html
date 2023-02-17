@@ -1,0 +1,12 @@
+<div class="journal" [ngSwitch]="case">
+    <div *ngSwitchCase="'one'">
+        <app-form-contact (formContents)="onSubmit($event)" [name]="name" [surname]="surname" [email]="email" [comment]="comment"></app-form-contact>
+    </div>
+    <div *ngSwitchCase="'two'">
+        <h1>Gracias por su interés. En breve le contactaremos.</h1>
+        <h1>{{name}}</h1>
+        <h1>{{surname}}</h1>
+        <h1>{{email}}</h1>
+        <p>{{comment}}</p>
+    </div>
+    </div>

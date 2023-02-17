@@ -1,0 +1,87 @@
+<div class="journal" *ngIf="contador === 0">
+  <div class="first photo" [ngSwitch]="case">
+    <div class="image-container" *ngSwitchCase="'caseOne'">
+      <img (click)="onClick()" src="https://media.gatesnotes.com/-/media/Images/Articles/Development/Toilets/Sanitation-showcase/sanitation-showcase_2018_800px_v1.ashx">
+    </div>
+    <div class="image-container3" *ngSwitchCase="'caseTwo'">
+      <img *ngFor="let element of imagenes let i = index" (click)="onImage(i)" src={{element}}>
+    </div>
+    <div class="image-container" *ngSwitchCase="'caseThree'" (click)="onIframe()">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/pbJ0b_ENwOs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+    </div>
+    <div class="image-container" *ngSwitchCase="'caseFour'" (click)="onIframe()">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/tN4_0muZ5hc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <span class="caption">{{foot}}</span>
+  </div>
+    <p *ngIf="contadorDos === 0">
+      <span class="first-letter">U</span>no de los aspectos más importantes en toda sociedad es el saneamiento de las
+      aguas residuales. De acuerdo con informes de la OMS y UNICEF, aproximadamente un 60% de la población mundial, unos
+      4.500 millones de personas, no cuentan en sus hogares con un sistema de elimine los excrementos de forma segura
+      –es
+      decir, no cuentan con inodoros o utilizan un sistema de saneamiento poco seguro-, mientras que se estima que 892
+      millones de personas siguen haciendo sus necesidades al aire libre. Estos datos se traducen en una realidad
+      incómoda:
+      en torno a 1.800 millones de personas beben agua no potable que podría estar contaminada, entre otras cosas, por
+      heces,
+      mientras que el 80% de las aguas residuales generadas en el mundo regresan al medio ambiente sin ser tratadas o
+      reutilizadas. Las consecuencias son, básicamente, enfermedades y millones de muertes. Según las últimas
+      estimaciones,
+      la diarrea y otras enfermedades relacionadas con el mal saneamiento matan a casi 500.000 niños menores de cinco
+      años
+      cada año. El mal saneamiento es la segunda causa de muerte más común en niños menores de cinco años, causando más
+      muertes que el SIDA, el paludismo y el sarampión juntos.
+    </p>
+    <p *ngIf="contadorTres === 0">
+      <span class="first-letter">P</span>or si los datos no fueran lo suficientemente alarmantes, las Naciones Unidas
+      estima que entre ahora y el 2050, la población mundial crecerá en dos mil millones de personas. Más del 90 % de
+      ese crecimiento se concentrará en las ciudades y en los países en vías de desarrollo, lugares que tienen menos
+      probabilidades de tener un buen saneamiento. Facilitar la llegada de sistemas de saneamiento a todos los
+      habitantes
+      del planeta es, por tanto, uno de los objetivos de Desarrollo del Milenio que deberían implementarse antes de
+      2030,
+      por lo que urge buscar soluciones que ayuden a conseguir el objetivo: tratar los desechos humanos antes de que
+      regresen al medio ambiente.
+    </p>
+    <p *ngIf="contadorCuatro === 0">
+      <span class="first-letter">L</span>a Fundación Bill y Melinda Gates ha invertido más de 200 millones de dólares
+      durante la última década con el objetivo de mejorar el saneamiento de los países en vías de desarrollo. Las mejoras
+      previstas en la gestión de las aguas residuales y los desechos humanos, no sólo salvaría millones de vidas, también
+      tendría un impacto económico, puesto que supondría ahorrar más de 200.000 millones de euros al año en costes médicos 
+      relacionados
+      con la diarrea, el cólera y otras enfermedades causadas por las malas condiciones del agua, saneamiento e higiene.
+      Para ello ha financiado investigaciones y ha creado sinergias con grandes empresas de ingeniería y tecnología.
+    </p>
+    <p *ngIf="contadorCinco === 0">
+      <span class="first-letter">C</span>reado por la empresa <a href="https://www.janicki.com/" target="_blank">Janicki 
+        Bioenergy</a>, en un intento de encontrar un modelo alternativo de gestión de las aguas residuales. El Omni 
+        Processor transforma los desechos 
+      humanos en agua potable y electricidad. El primer prototipo fue instalado en Dakar, Senegal, en 2015.
+    </p>
+    <div *ngIf="contadorSeis === 0">
+      <p>
+      <span class="first-letter">E</span>n 2011, la Fundación creo el Reinvent the Toilet Challenge, una iniciativa que 
+      perseguía incentivar a investigadores de todo el mundo y procedentes de diversos campos para que desarrollaran 
+      soluciones de saneamiento seguras que funcionaran sin depender de sistemas de alcantarillado o agua corriente. 
+      Hasta la fecha las alcantarillas y las plantas de tratamiento han sido la mejor manera de procesar los desechos 
+      de manera segura, pero su construcción, mantenimiento y operación suponen un coste demasiado elevado para los países 
+      en vías de desarrollo. Además, la mayoría de estos países sufren escasez de agua, elemento esencial en el proceso de 
+      saneamiento mediante alcantarillado. 
+    </p>
+    <p>
+      <span class="first-letter">C</span>ientíficos e ingenieros de todo el mundo desarrollaron cientos de ideas interesantes 
+      sobre cómo diseñar inodoros que procesaran de manera segura los desechos humanos sin necesidad de agua o electricidad. 
+    </p>
+    <p>
+      <span class="first-letter">E</span>l pasado mes de septiembre se presentó un prototipo, creado con 
+      <a href="https://www.livemint.com/news/world/bill-gates-samsung-launch-prototype-of-waterless-toilet-that-turns-solid-waste-into-ashes-read-here-11662893353377.html" target="_blank">Samsung</a>, que permite 
+      reciclar completamente el agua tratada. Los residuos sólidos se deshidratan, se secan y se convierten en cenizas, mientras 
+      que los residuos líquidos se tratan mediante un proceso de depuración biológica.
+    </p>
+    <p>
+      <span class="first-letter">S</span>amsung tiene previsto ofrecer licencias libres de derechos de patentes relacionadas 
+      con el proyecto a los países en desarrollo durante la fase de comercialización. Samsung también seguirá asesorando a la 
+      Fundación Bill y Melinda Gates para ayudar a llevar las tecnologías a la producción en masa.
+    </p>
+  </div>
+</div>

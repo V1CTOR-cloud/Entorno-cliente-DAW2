@@ -1,0 +1,25 @@
+<br>
+  <form (ngSubmit)="onSubmit()" method="post" action="#">
+    <div class="row gtr-uniform">
+        <div class="col-6 col-12-xsmall">
+            <input [(ngModel)]="name" type="text" name="name" id="name" value=""
+                placeholder="Nombre" />
+        </div>
+        <div class="col-6 col-12-xsmall">
+            <input [(ngModel)]="surname" type="text" name="first-surname" id="first-surname" value=""
+                placeholder="Primer apellido" />
+        </div>
+        <div class="col-6 col-12-xsmall">
+            <input [(ngModel)]="email" type="text" name="email" id="email" value=""
+                placeholder="Email" />
+        </div>
+        <div class="col-12">
+            <textarea [(ngModel)]="comment" name="message" id="message" placeholder="Comentario..." rows="6"></textarea>
+        </div>
+        <div class="col-12">
+            <ul class="actions">
+                <li><input type="submit" value="Enviar" class="primary" /></li>
+            </ul>
+        </div>
+    </div>
+</form>

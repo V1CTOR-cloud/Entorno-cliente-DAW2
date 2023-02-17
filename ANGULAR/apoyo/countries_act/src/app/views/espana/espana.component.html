@@ -1,0 +1,27 @@
+<article>
+    <h1>{{spain?.name?.official}}</h1>
+    <img src="{{ spain?.coatOfArms?.png }}" alt="germnay" width="250px">
+<table>
+    <tr>
+        <th>Region:</th>
+        <td>{{ spain?.region }}</td>
+    </tr>
+    <tr>
+        <th>Temperatura máxima:</th>
+        <td>{{ weather?.main?.temp_max }}</td>
+    </tr>
+    <tr>
+        <th>Temperatura mínima:</th>
+        <td>{{ weather?.main?.temp_min }}</td>
+    </tr>
+    <tr>
+        <th>Humedad:</th>
+        <td>{{ weather?.main?.humidity }}</td>
+    </tr>
+    <tr>
+        <th>Presión atmosférica:</th>
+        <td>{{ weather?.main?.pressure }}</td>
+    </tr>
+</table>
+
+</article>

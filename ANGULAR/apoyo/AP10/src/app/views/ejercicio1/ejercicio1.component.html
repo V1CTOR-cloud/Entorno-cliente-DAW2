@@ -1,0 +1,48 @@
+<div class="question" id="question-1" [ngSwitch]="case">
+  <h4>Ejercicio 1</h4>
+
+  <form (ngSubmit)="onType()" *ngSwitchCase="'one'" method="post" action="#">
+    <div class="answer-bank">
+      <div class="answer">
+        <select [(ngModel)]="search" name="finish" id="finish">
+          <option value="">- Búsqueda por: -</option>
+          <option value="capitulo">Capítulo</option>
+          <option value="personaje">Personaje</option>
+        </select>
+      </div>
+      <div class="answer">
+        <input type="submit" value="Enviar" class="primary" />
+      </div>
+    </div>
+  </form>
+
+  <form (ngSubmit)="onSubmit(search)" *ngSwitchCase="'two'" method="post" action="#">
+    <div class="answer-bank">
+      <div class="answer">
+        <input [(ngModel)]="type" type="text" name="name" id="name" value="" placeholder="type" />
+      </div>
+      <div class="answer">
+        <input type="submit" value="Enviar" class="primary" />
+      </div>
+    </div>
+  </form>
+
+  <div *ngSwitchCase="'three'">
+    <div *ngFor="let item of episodes">
+      <p>{{item.episode}} - {{item.name}}</p>
+      <p>Personajes:</p>
+      <div *ngFor="let element of resp">
+        <img src="{{element.image}}" />
+        <p>{{element.name}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngSwitchCase="'four'">
+    <div *ngFor="let item of resp">
+      <img src="{{item.image}}" />
+      <p>{{item.name}}</p>
+    </div>
+  </div>
+
+</div>

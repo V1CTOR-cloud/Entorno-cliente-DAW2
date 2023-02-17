@@ -1,0 +1,3 @@
+<div class="home" *ngFor="let profile of profiles">
+    <app-detail [userName]="profile.login" [photo]="profile.avatar_url"></app-detail>
+</div>

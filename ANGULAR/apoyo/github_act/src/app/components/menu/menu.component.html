@@ -1,0 +1,9 @@
+<aside>
+    <h2 (click)="onClick()">{{title}}</h2>
+    <nav class={{clase}}>
+        <ul>
+            <li><a [routerLink]="['home']">{{links[0]}}</a></li>
+            <li><a [routerLink]="['list']">{{links[1]}}</a></li>
+        </ul>
+    </nav>
+</aside>

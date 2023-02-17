@@ -1,0 +1,27 @@
+<div class="journal" [ngSwitch]="photos">
+    <div class="first photo" *ngSwitchCase="'one'">
+        <div *ngFor="let item of menu">
+            <div class="image-container3">
+                <img *ngFor="let element of item" (click)="onClick(element + 1)" src={{list[element].img}}>
+            </div>
+        </div>
+        <span class="caption">Proyectos</span>
+    </div>
+    <div *ngFor="let item of list">
+        <div class="first photo" *ngSwitchCase="item.case">
+            <div class="image-container">
+                <img (click)="onClick(0)" src={{item.img}}>
+            </div>
+            <span class="caption"><a [routerLink]="[item.route]">{{item.title}}</a></span>
+        </div>
+    </div>
+    <p>
+        <span class="first-letter">L</span>a fundación de Bill y Melinda ha llevado a cabo numerosos proyectos en distintas áreas. 
+        Muchos de ellos se realizan trabajando conjuntamente con otras organizaciones
+        internacionales o directamente creando sinergias con empresas punteras de tecnología que proporcionan la ayuda y
+        conocimientos técnicos necesarios para llevar a cabo las innovaciones requeridas. Aquí se detallan sólo unos pocos proyectos, 
+        divididos en cuatro grandes campos de acción. 
+    </p>
+    <span class="quote">"As we look ahead into the next century, leaders will be those who empower others."</span>
+</div>
+

@@ -1,0 +1,8 @@
+<div class="journal">
+    <app-panel [tiles]="panel" [cards]="cards[counter]" (counter)="handleClick($event)" (more)="handleMore($event)"></app-panel>
+    <div *ngIf="contador>0">
+        <div *ngFor="let item of paragraphs">
+            <p *ngFor="let element of paragraphs">{{element}}</p>
+        </div>
+    </div>
+</div>

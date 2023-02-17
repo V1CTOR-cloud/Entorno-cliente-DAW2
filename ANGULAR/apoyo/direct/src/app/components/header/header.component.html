@@ -1,0 +1,10 @@
+<nav class="header">
+    <ul *ngIf="header; else elseBlock">
+      <li><a [routerLink]="['proyectos']" (click)="onClick()">PROYECTOS</a></li>
+    </ul>
+    <ng-template #elseBlock>
+      <ul>
+        <li><a [routerLink]="['home']" (click)="onClick()">HOME</a></li>
+      </ul>
+    </ng-template>
+  </nav>

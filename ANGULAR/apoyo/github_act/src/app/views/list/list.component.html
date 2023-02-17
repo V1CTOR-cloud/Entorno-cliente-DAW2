@@ -1,0 +1,4 @@
+<article *ngFor="let perfil of profiles">
+    <h1 [ngStyle]="{'background': 'url(' + perfil.avatar_url +')no-repeat'}"></h1>
+    <p><a [href]="perfil.html_url">{{perfil.login}}</a></p> 
+</article>

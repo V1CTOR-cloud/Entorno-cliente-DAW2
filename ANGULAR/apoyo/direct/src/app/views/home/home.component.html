@@ -1,0 +1,85 @@
+<div [ngSwitch]="operacion">
+    <div *ngSwitchCase="'one'">
+        <div class="journal">
+            <div class="first photo">
+              <div class="image-container">
+                <img src="https://s.abcnews.com/images/US/bill-gates-prime-02-rt-llr-201210_1607630168227_hpEmbed_1x1_992.jpg">
+              </div>
+              <span class="caption">Instalaciones de "The Bill & Melinda Gates Foundation"</span>
+            </div>
+            <p>
+              <span class="first-letter">T</span>he Bill & Melinda Gates Foundation es la fundación privada fundada por Bill Gates y Melinda Gates en 1994. Su sede está en la ciudad de Seattle, Washington. 
+              Según la OCDE, entre año 2013 y el 2020, la Fundación ha encabezado la lista de entidades filantrópicas de carácter privado que mayor dotación económica ha destinado a la cooperación y al desarrollo.
+            </p>
+            <span class="quote" (click)="onClick()">"As I look to the future, I plan to give virtually all of my wealth to the foundation."</span>
+          </div>
+    </div>
+    <div *ngSwitchCase="'two'">
+        <div class="journal">
+            <div class="first photo">
+              <div class="image-container2">
+                <img *ngFor="let item of listTwo" src={{item}}>
+              </div>
+              <span class="caption">Bill y Melinda realizan nombrosos actos públicos en representación de su Fundación</span>
+            </div>
+            <p (click)="onParagraph()" *ngIf="paragraphs; else elseBlock">
+              <span class="first-letter">L</span>os campos de acción de la fundación son diversos y variados. Pueden dividirse en seis grandes caterogías: Igualdad de Género; Desarrollo Global; Crecimiento y Oportunidades Mundiales; Salud Mundial; Política Mundial y Promoción; Programa para Estados Unidos. 
+              Haz click sobre este párrafo para saber más sobre ellas.
+            </p>
+            <ng-template #elseBlock>
+              <p>
+                Igualdad de Género: garantizar que las mujeres y las niñas de África y Asia meridional puedan disfrutar de buena salud, tomar sus propias decisiones, ganar su propio dinero y ser líderes en sus sociedades.
+              </p>
+              <p>
+                Desarrollo Global: mejorar el suministro de productos y servicios sanitarios de alto impacto a las comunidades más pobres del mundo y ayudar a los países a ampliar el acceso a la cobertura sanitaria.
+              </p>
+              <p>
+                Crecimiento y Oportunidades Mundiales: crear y ampliar innovaciones basadas en el mercado para estimular un crecimiento económico inclusivo y sostenible. 
+              </p>
+              <p>
+                Salud Mundial: reducir las desigualdades en materia de salud mediante el desarrollo de nuevas herramientas y estrategias para reducir la carga de las enfermedades infecciosas y las principales causas de mortalidad infantil en los países en desarrollo. 
+              </p>
+              <p>
+                Política Mundial y Promoción: establecer relaciones estratégicas y promover políticas que contribuyan a impulsar nuestro trabajo.
+              </p>
+              <p>
+                Programa para Estados Unidos: garantizar que todo el mundo en Estados Unidos pueda aprender, crecer y salir adelante, independientemente de su raza, sexo, etnia o ingresos familiares.
+              </p>
+            </ng-template>
+            <span class="quote" (click)="onClick()">"I hope you will judge yourselves not on your professional accomplishments alone but on how well you treated people a world away who have nothing in common with you but their humanity."</span>
+          </div>
+    </div>
+    <div *ngSwitchCase="'three'">
+        <div class="journal">
+            <div class="first photo">
+              <div class="image-container2" *ngFor="let item of listThree">
+                <img *ngFor="let photo of item" src={{photo}}>
+              </div>
+              <span class="caption">Algunos de los miembros de <a href="https://givingpledge.org/" target="_blank">The Giving Pledge</a></span>
+            </div>
+            <p>
+              <span class="first-letter">B</span>ill Gates mantiene desde hace más de 30 años una larga y sólida amistad con el inversor y magnate Warren Buffet, quién ha donado hasta la fecha la mitad de su fortuna a la Fundación.
+              En 2010, Gates y Buffett, junto con la entonces esposa de Gates, Melinda, iniciaron The Giving Pledge, una iniciativa que perseguía que multimillonarios de todo el mundo se comprometieran a donar más de la mitad de su riqueza. 
+              Hasta la fecha se han donado unos 600.000 millones de dólares (604.777 millones de euros). <a href="https://givingpledge.org/pledgerlist" target="_blank">Estos</a> son sus miembros.
+            </p>
+            <span class="quote" (click)="onClick()">"From those to whom much is given, much is expected."</span>
+          </div>
+    </div>
+    <div *ngSwitchCase="'four'">
+        <div class="journal">
+            <div class="first photo">
+                <div class="image-container">
+                  <img src="https://s3.amazonaws.com/downloads.unmultimedia.org/tv/unifeed/00/2011/05/jpg/unifeed110517f.jpg">
+                </div>
+                <span class="caption">Instalaciones de "The Bill & Melinda Gates Foundation"</span>
+              </div>
+            <p>
+              <span class="first-letter">B</span>ill Gates, a través de su Fundación ha liderado nombrosos proyectos con empresas tecnologicas privadas y generado sinergias con organismos internacionales con el objetivo de hacer frente a los
+              mayores desafíos que la sociedad tiene actualmente. <a [routerLink]="['../proyectos']">Aquí</a> se pueden ver algunos de ellos.
+            </p>
+            <span class="quote" (click)="onClick()">"Humanity’s greatest advances are not in its discoveries but in how those discoveries are applied to reduce inequity."</span>
+            
+        </div>
+    </div>
+    
+</div>

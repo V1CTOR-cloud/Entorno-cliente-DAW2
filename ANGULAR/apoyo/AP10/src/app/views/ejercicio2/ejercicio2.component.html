@@ -1,0 +1,27 @@
+<div class="question" id="question-2" [ngSwitch]="case">
+    <h4>Ejercicio 2</h4>
+
+      <form (ngSubmit)="onSubmit()" *ngSwitchCase="'one'" method="post" action="#">
+        <div class="answer-bank">
+            <div class="answer">
+                <input [(ngModel)]="name" type="text" name="name" id="name" value="" placeholder="Nombre" />
+            </div>
+            <div>
+                <div class="answer">
+                    <input type="submit" value="Enviar" class="primary" />
+                </div>
+            </div>
+        </div>
+    </form>
+   
+    <div *ngSwitchCase="'two'">
+        <div class="answer-bank" *ngFor="let item of resp.data let i = index">
+            <p (click)="onClick(item.id)">{{item.first_name}} {{item.last_name}}</p>
+        </div>
+    </div>
+
+    <div *ngSwitchCase="'three'">
+        <p>Total points by the player: {{this.points}}</p>
+    </div>
+
+  </div>

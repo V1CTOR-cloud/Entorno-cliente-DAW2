@@ -1,0 +1,6 @@
+<article>
+    <h1 [ngStyle]="{'background': 'url(' + profiles[position].avatar_url +')no-repeat'}"></h1>
+    <p><a [href]="profiles[position].html_url">{{profiles[position].login}}</a></p> 
+    
+    <button (click)="previous()">Anterior</button><button (click)="next()">Siguiente</button>    
+</article>
